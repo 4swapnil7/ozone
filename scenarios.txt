@@ -1,0 +1,17 @@
+# A dynamic code for any length and order of part_columns list.
+I'm having a list of part_columns, for eg. [vertical, partition_date,hour]
+I need a bash code, such that
+First find the position of partition_date in the list.
+Check how many columns are to the left of it.
+Then write a recursive for loop where all left most values get opened up for one particular partition_date.
+Eg, if there are three values for first column vertical [home,mobility,other], then they should be written as {vertical}/partition_date.
+output should be: 
+home/partition_date,mobility/partition_date,other/partition_date 
+one by one.
+
+But if the case was for columns [utm,vertical, partition_date,hour]
+and utm has values [skyc,jhd]
+Then output should be: 
+skyc/home/partition_date, skyc/mobility/partition_date, skyc/other/partition_date
+and then 
+jhd/home/partition_date, jhd/mobility/partition_date, jhd/other/partition_date
